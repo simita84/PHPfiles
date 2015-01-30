@@ -18,33 +18,28 @@
 		   }
 			echo count($array);
 			var_dump($array);
+
 			$time_before=microtime();
-			for ($i=0; $i <count($array) ; $i++) { 
-				$smallest=$array[$i];
-				$smallest_index=$i;
-				for ($j=$i+1; $j < count($array); $j++) { 
-					 if($array[$j]<$smallest){
-					 	$smallest=$array[$j];
-						$smallest_index=$j;
-						// echo "smallest".$smallest."<br>";
-				         //echo "smallest_index".$smallest_index."<br>";
+			for ($i=0; $i < count($array); $i++) { 
+				for ($j=0; $j <count($array)-1 ; $j++) { 
+					 if($array[$j]>$array[$j+1]){
+					 	$temp=$array[$j];
+					 	$array[$j]=$array[$j+1];
+					 	$array[$j+1]=$temp;
 					 }
 				}
-				 $temp=$array[$i];
-				 $array[$i]=$smallest;
-				 $array[$smallest_index]=$temp;	 
-			}?>
-			<?php 
-			$time_after=microtime(); 
-			echo "time taken=".($time_after-$time_before)."ms";
-			echo "<br>";
-			?>
+			}
+			$time_after=microtime();
 
+			echo ($time_after-$time_before);
+		 ?>
+
+ 
     </div>
 	<div> 
-	    <h2>Selection Sort</h2>
+	    <h2>Bubble Sort</h2>
 	    <p><?php
-		  var_dump($array);
+		 var_dump($array);
 		 ?>
 		</p>
 	</div>	
