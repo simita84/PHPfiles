@@ -58,9 +58,10 @@
 				<h2>Adding more states</h2>
 				<?php
 					$states= array('CA','WA','UT','AZ','VA');
-					$states[]="NY";
-					$states[]="NJ";
-					$states[]="DE";
+				    array_push($states, "NY","NJ","DE");
+					//$states[]="NY";
+					//$states[]="NJ";
+					//$states[]="DE";
 					var_dump($states);
 				?>
 			</div>
